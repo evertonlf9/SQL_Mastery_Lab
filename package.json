@@ -1,0 +1,19 @@
+{
+  "name": "sql-mastery-lab",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -n API,WEB -c auto \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "npm run start -w server",
+    "verify": "node scripts/verify.mjs",
+    "generate:dbeaver": "node scripts/generate-dbeaver-challenges.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
